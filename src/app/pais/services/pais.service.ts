@@ -22,4 +22,10 @@ export class PaisService {
     //   catchError( err => of(['array enviado cuando hay error']))
     // );
   }
+
+  buscarCapital(termino: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${termino}`;
+    return this.http.get<Country[]>(url);
+  }
+
 }
